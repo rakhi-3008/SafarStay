@@ -8,8 +8,8 @@ const listingSchema = new Schema({
     },
     description: String,
     image: {
-        type: String,
-        
+    filename: String,
+    url: String
     },
     price: Number,
     location: String,
@@ -18,4 +18,4 @@ const listingSchema = new Schema({
 
 const Listing = mongoose.model("Listing", listingSchema);
 
-module.export = Listing;
+module.exports = Listing;
