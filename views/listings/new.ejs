@@ -4,7 +4,12 @@
     <div class="col-8 offset-2">
       <h3>Create a New Listing</h3>
 
-      <form action="/listings" method="post" novalidate class="needs-validation">
+      <form
+        action="/listings"
+        method="post"
+        novalidate
+        class="needs-validation"
+      >
         <div class="mb-3">
           <label for="title" class="form-label">Title</label>
           <input
@@ -24,18 +29,25 @@
             name="listing[description]"
             id=""
             placeholder="enter description"
-            class="form-control" required
+            class="form-control"
+            required
           ></textarea>
           <div class="invalid-feedback">Please enter a short description</div>
         </div>
 
         <div class="mb-3">
           <label for="image" class="form-label">Image</label>
+
+          <!-- To this: -->
           <input
-            name="listing[image]"
-            id=""
+            name="listing[image][url]"
             placeholder="enter image URL/Link"
             class="form-control"
+          />
+          <input
+            type="hidden"
+            name="listing[image][filename]"
+            value="listingimage"
           />
         </div>
 
@@ -46,7 +58,8 @@
             name="listing[price]"
             id=""
             placeholder="enter price"
-            class="form-control" required
+            class="form-control"
+            required
           />
           <div class="invalid-feedback">Price should be valid</div>
         </div>
@@ -58,7 +71,8 @@
             name="listing[location]"
             id=""
             placeholder="enter location"
-            class="form-control" required
+            class="form-control"
+            required
           />
           <div class="invalid-feedback">Location should be valid</div>
         </div>
@@ -70,7 +84,8 @@
             name="listing[country]"
             id=""
             placeholder="enter country"
-            class="form-control" required
+            class="form-control"
+            required
           />
           <div class="invalid-feedback">Country should be valid</div>
         </div>
